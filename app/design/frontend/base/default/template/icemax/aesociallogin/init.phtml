@@ -1,0 +1,23 @@
+<?php if (Mage::getStoreConfig('aesociallogin/options/enable')): ?>
+<script>
+    function AEJSReady(aeJS) {
+        // Specify the settings required for your environment (see Settings)
+        aeJS.settings['extra_fields_screen'] = 'after'; // 'disabled', 'before' or 'after'
+        aeJS.settings['auth_window']         = <?php echo Mage::getStoreConfig('aesociallogin/options/auth_window')?>;
+        aeJS.settings['return_url']          = "<?php echo Mage::getUrl('aesociallogin/api/login'); ?>";
+        aeJS.settings['sso']                 = "<?php echo Mage::getStoreConfig('aesociallogin/options/sso'); ?>";
+
+        // Attach local handlers to events
+        aeJS.events.onLogin.addHandler(loginHandler);
+    }
+
+    //locally defined handlers
+    function loginHandler(user) {
+        <?php if (Mage::getStoreConfig('aesociallogin/options/auth_window') == 'true'): ?>
+        window.location.href = "<?php echo Mage::getUrl('aesociallogin/api/login'); ?>" + '?accessToken=' + user.data.AccessToken;
+        <?php endif; ?>
+    }
+</script>
+
+<script type="text/javascript" charset="utf-8" src="<?php echo Mage::getStoreConfig('aesociallogin/options/endpoint')?>/framework/js/<?php echo Mage::getStoreConfig('aesociallogin/options/framework_id') ?>"></script>
+<?php endif; ?>

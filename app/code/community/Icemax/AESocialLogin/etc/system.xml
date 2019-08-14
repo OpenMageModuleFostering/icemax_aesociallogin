@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <icemax translate="label" module="aesociallogin">
+            <label>Icemax</label>
+            <sort_order>250</sort_order>
+        </icemax>
+    </tabs>
+    <sections>
+        <aesociallogin translate="label" module="aesociallogin">
+            <label>Appreciation Engine Social Login</label>
+            <tab>icemax</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <options translate="label">
+                    <label>Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <apikey translate="label">
+                            <label>Appreciation Engine API key</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[Please enter your Appreciation Engine API key.<br />API key as available in AE dashboard]]>
+                            </comment>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </apikey>
+                        <framework_id translate="label">
+                            <label>Appreciation Engine Framework ID</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[FrameworkID as available in AE dashboard]]>
+                            </comment>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </framework_id>
+                        <seamless>
+                            <label>Seamless Registration</label>
+                            <frontend_type>select</frontend_type>
+                            <comment><![CDATA[Enabling this feature allows users authenticating via a provider that returns all necessary information to skip the registration form.]]>
+                            </comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </seamless>
+                        <endpoint>
+                            <label>Appreciation Engine Endpoint</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[Specifies The Appreciation Engine URL is used, for example, http://theappreciationengine.com/]]>
+                            </comment>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </endpoint>
+                        <sso>
+                            <label>SSO scope</label>
+                            <frontend_type>select</frontend_type>
+                            <comment><![CDATA[Scope determines whether a user will be automatically signed in (if sessions available)]]>
+                            </comment>
+                            <source_model>aesociallogin/system_config_sso</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sso>
+                        <auth_window translate="label">
+                            <label>Auth window type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>aesociallogin/system_config_authwindow</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </auth_window>
+                    </fields>
+                </options>
+                <accountdata translate="label">
+                    <label>Connection info</label>
+                    <frontend_type>text</frontend_type>
+                    <frontend_model>aesociallogin/accountdata</frontend_model>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </accountdata>
+                <info translate="label">
+                    <label>About</label>
+                    <frontend_type>text</frontend_type>
+                    <frontend_model>aesociallogin/info</frontend_model>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </info>
+
+				<!-- Frame global uneditable config variables -->
+                <vars translate="label">
+                    <label>Global Variables</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>50</sort_order>
+                    <show_in_default>0</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <apikey translate="label">
+                            <label>AESocialLogin API key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </apikey>
+                    </fields>
+                </vars>
+            </groups>
+        </aesociallogin>
+    </sections>
+</config>

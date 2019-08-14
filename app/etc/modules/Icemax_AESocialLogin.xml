@@ -1,0 +1,8 @@
+<config>
+  <modules>
+    <Icemax_AESocialLogin>
+      <active>true</active>
+      <codePool>community</codePool>
+    </Icemax_AESocialLogin>
+  </modules>
+</config>
