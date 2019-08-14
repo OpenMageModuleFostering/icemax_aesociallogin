@@ -102,7 +102,13 @@ class Icemax_AESocialLogin_Helper_Identifiers extends Mage_Core_Helper_Abstract 
             ->getCollection()
             ->addFieldToFilter('email', $email)
             ->getFirstItem();
-        return $customer;
+            
+        $customer_id = $customer->getId();
+        if ((int) $customer_id > 0) {
+            return $customer;
+        }
+        
+        return false;
     }
 
     /**

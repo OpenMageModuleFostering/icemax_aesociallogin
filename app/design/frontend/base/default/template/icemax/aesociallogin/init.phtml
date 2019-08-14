@@ -2,10 +2,11 @@
 <script>
     function AEJSReady(aeJS) {
         // Specify the settings required for your environment (see Settings)
-        aeJS.settings['extra_fields_screen'] = 'after'; // 'disabled', 'before' or 'after'
-        aeJS.settings['auth_window']         = <?php echo Mage::getStoreConfig('aesociallogin/options/auth_window')?>;
-        aeJS.settings['return_url']          = "<?php echo Mage::getUrl('aesociallogin/api/login'); ?>";
-        aeJS.settings['sso']                 = "<?php echo Mage::getStoreConfig('aesociallogin/options/sso'); ?>";
+        aeJS.settings['extra_fields_screen']   = 'after'; // 'disabled', 'before' or 'after'
+        aeJS.settings['auth_window']           = <?php echo Mage::getStoreConfig('aesociallogin/options/auth_window')?>;
+        aeJS.settings['return_url']            = "<?php echo Mage::getUrl('aesociallogin/api/login'); ?>";
+        aeJS.settings['display_error_message'] = false;
+        aeJS.settings['sso']                   = "<?php echo Mage::getStoreConfig('aesociallogin/options/sso'); ?>";
 
         // Attach local handlers to events
         aeJS.events.onLogin.addHandler(loginHandler);
@@ -18,12 +19,7 @@
         <?php endif; ?>
     }
 </script>
-
+<?php if (Mage::getStoreConfig('aesociallogin/options/endpoint') != '' && Mage::getStoreConfig('aesociallogin/options/framework_id') != ''): ?>
 <script type="text/javascript" charset="utf-8" src="<?php echo Mage::getStoreConfig('aesociallogin/options/endpoint')?>/framework/js/<?php echo Mage::getStoreConfig('aesociallogin/options/framework_id') ?>"></script>
 <?php endif; ?>
-<style>
-    .ow-overlay,.ae-modal-overlay{display:none;}
-    .ow-closed,.ae-modal-closed,.ae-modal-overlay-closed{display:none;}
-    .ae-modal{display:none;}
-    .ae-modal iframe{display:none;}
-</style>
+<?php endif; ?>

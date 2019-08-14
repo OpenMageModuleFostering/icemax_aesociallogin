@@ -64,7 +64,12 @@ class Icemax_AESocialLogin_ApiController extends Mage_Customer_AccountController
      */
     public function loginAction() {
         $session = $this->_getSession();
-
+        
+        $redirect_url = $this->_getRefererUrl();
+        if (!empty($redirect_url) && $this->_isUrlInternal($redirect_url)) {
+            $session->setBeforeAuthUrl($redirect_url);
+        }
+        
         // Redirect if user is already authenticated
         if ($session->isLoggedIn()) {
             $this->_redirect('customer/account');
@@ -193,7 +198,12 @@ class Icemax_AESocialLogin_ApiController extends Mage_Customer_AccountController
                 Mage::getSingleton('aesociallogin/session')->setIdentifier(false);
             }
         }
+        $redirect_url = $session->getBeforeAuthUrl(true);
 
+        if (!empty($redirect_url)) {
+            $this->_redirectUrl($redirect_url);
+            return;
+        }
         parent::_loginPostRedirect();
     }
 

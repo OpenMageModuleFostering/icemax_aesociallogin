@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
-    <!-- Initialize AE on every page. -->
+    <!-- Initialize AE on all pages. -->
     <default>
-        <reference name="head">
+        <reference name="before_body_end">
             <block type="core/template" name="icemax_aesociallogin_init" template="icemax/aesociallogin/init.phtml"/>
         </reference>
     </default>
