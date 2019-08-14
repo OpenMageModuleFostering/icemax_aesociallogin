@@ -35,7 +35,7 @@ class Icemax_AESocialLogin_Block_Info extends Mage_Adminhtml_Block_System_Config
     protected function _getFieldHtml($fieldset) {
         $content = '<p>The Appreciation Engine Social Login for Magento ' . Mage::getConfig()->getModuleConfig("Icemax_AESocialLogin")->version . '</p>';
         $content.= '<p>The Appreication Engine website: <a href="http://theappreciationengine.com/" target="_blank">http://theappreciationengine.com/</a></p>';
-        $content.= '<p>The Extension developed by <a href="#">Icemax.</a></p>';
+        $content.= '<p>The Extension developed by <a href="http://www.magentocommerce.com/magento-connect/developer/icemax" target="_blank">Icemax.</a></p>';
 
         return $content;
     }

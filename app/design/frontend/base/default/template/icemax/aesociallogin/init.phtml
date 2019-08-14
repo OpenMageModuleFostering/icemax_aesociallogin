@@ -9,6 +9,8 @@
 
         // Attach local handlers to events
         aeJS.events.onLogin.addHandler(loginHandler);
+        aeJS.events.onFlow.addHandler(flowHandler);
+        aeJS.events.onWindow.addHandler(windowHandler);
     }
 
     //locally defined handlers
@@ -21,3 +23,9 @@
 
 <script type="text/javascript" charset="utf-8" src="<?php echo Mage::getStoreConfig('aesociallogin/options/endpoint')?>/framework/js/<?php echo Mage::getStoreConfig('aesociallogin/options/framework_id') ?>"></script>
 <?php endif; ?>
+<style>
+    .ow-overlay,.ae-modal-overlay{display:none;}
+    .ow-closed,.ae-modal-closed,.ae-modal-overlay-closed{display:none;}
+    .ae-modal{display:none;}
+    .ae-modal iframe{display:none;}
+</style>

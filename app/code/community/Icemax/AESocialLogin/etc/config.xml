@@ -3,7 +3,7 @@
 	<modules>
 		<Icemax_AESocialLogin>
             <codePool>community</codePool>
-			<version>1.0.1</version>
+			<version>1.0.2</version>
 		</Icemax_AESocialLogin>
 	</modules>
 	<global>
