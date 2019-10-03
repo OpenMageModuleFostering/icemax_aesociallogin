@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Icemax_AESocialLogin",
+    "name": "OpenMageModuleFostering\/Icemax_AESocialLogin",
     "type": "magento-module",
     "license": "GNU-General-Public-License-(GPL)-v-3.0",
     "homepage": "",
     "description": "The Appreciation Engine Social Login",
     "authors": [
-    {
-        "name": "Maxim Baybakov",
-        "email": "maxim.baibakov@gmail.com"
-    }
-],
+        {
+            "name": "Maxim Baybakov",
+            "email": "maxim.baibakov@gmail.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
